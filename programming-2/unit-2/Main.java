@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * Main program demonstrating the e-commerce system with interactive menu.
+ * 
  * @author Hee Moon
  */
 public class Main {
@@ -19,8 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
         initializeProducts();
-        System.out.println("Welcome to the E-Commerce System!");
-        System.out.print("Enter your name: ");
+        System.out.println("[E-Commerce System]");
+        System.out.print("- Enter your name: ");
         String name = scanner.nextLine().trim();
 
         try {
@@ -57,10 +58,10 @@ public class Main {
                     break;
                 case "7":
                     running = false;
-                    System.out.println("Thank you for shopping with us. Goodbye!");
+                    System.out.println("Session ended.");
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.\n");
+                    System.out.println("Invalid option. Please try again.");
             }
         }
         scanner.close();
@@ -70,25 +71,19 @@ public class Main {
      * Initializes the product catalog with sample products.
      */
     private static void initializeProducts() {
-        productCatalog.add(new Product(101, "Laptop",   999.99, 10));
-        productCatalog.add(new Product(102, "Mouse",     29.99, 50));
-        productCatalog.add(new Product(103, "Keyboard",  49.99, 30));
-        productCatalog.add(new Product(104, "Monitor",  299.99, 15));
+        productCatalog.add(new Product(101, "Laptop", 999.99, 10));
+        productCatalog.add(new Product(102, "Mouse", 29.99, 50));
+        productCatalog.add(new Product(103, "Keyboard", 49.99, 30));
+        productCatalog.add(new Product(104, "Monitor", 299.99, 15));
     }
 
     /**
      * Prints the main menu options.
      */
     private static void printMainMenu() {
-        System.out.println("========== Main Menu ==========");
-        System.out.println("1. Browse Products");
-        System.out.println("2. Add Product to Cart");
-        System.out.println("3. Remove Product from Cart");
-        System.out.println("4. View Cart");
-        System.out.println("5. Place Order");
-        System.out.println("6. View Order History");
-        System.out.println("7. Exit");
-        System.out.println("================================");
+        System.out.println("[1] Browse     [2] Add to Cart  [3] Remove from Cart");
+        System.out.println("[4] View Cart  [5] Place Order  [6] Order History");
+        System.out.println("[7] Exit");
         System.out.print("Select an option: ");
     }
 
@@ -183,6 +178,7 @@ public class Main {
 
     /**
      * Finds a product in the catalog by its ID.
+     * 
      * @param id the product ID to search for
      * @return the matching Product, or null if not found
      */
